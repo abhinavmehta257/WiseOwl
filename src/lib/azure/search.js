@@ -164,7 +164,19 @@ class SearchService {
     try {
       console.log(`Deleting document ${documentId} from search index...`);
 
-      const result = await this.searchClient.deleteDocuments([{id: documentId+"-1"}]);
+      const searchOptions = {
+        filter: `documentId eq '${documentId}'`, // Corrected filter syntax
+        select: ['id'],
+      };
+
+      const results = await this.searchClient.search('*', searchOptions); // Using '*' instead of empty string
+      const resultsArray = [];
+
+      for await (const result of results.results) {
+        // These results are the nearest neighbors to the query vector
+        resultsArray.push(result.document);
+      }
+      const result = await this.searchClient.deleteDocuments(resultsArray);
 
       if (result && result[0]) {
         console.log('Delete operation result:', {
@@ -177,6 +189,7 @@ class SearchService {
           throw new Error(result[0].errorMessage || 'Failed to delete document');
         }
       }
+
 
       return true;
     } catch (error) {

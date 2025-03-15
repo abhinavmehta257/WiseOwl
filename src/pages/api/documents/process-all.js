@@ -131,7 +131,7 @@ export default async function handler(req, res) {
               totalChunks: chunks.length
             }),
             userId: user.id,
-            botId: bot.botId,
+            botId: bot._id.toString(),
             documentId: document._id.toString(),
             vectorContent: embedding
           });

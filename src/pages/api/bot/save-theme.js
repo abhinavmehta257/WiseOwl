@@ -15,7 +15,6 @@ export default async function handler(req, res) {
   try {
     await connectDB();
 
-    botId = botId || `bot_${Date.now()}`;
     userId = userId || 'default-user';
 
     const bot = await Bot.findOneAndUpdate(

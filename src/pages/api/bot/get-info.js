@@ -27,6 +27,7 @@ export default async function handler(req, res) {
     }
 
     if (!bot) {
+      bot = await Bot.create({ userId: user.id });
       return res.status(404).json({ error: 'Bot not found' });
     }
 
