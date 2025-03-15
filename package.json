@@ -1,0 +1,68 @@
+{
+  "name": "wiseowl",
+  "version": "1.0.0",
+  "description": "AI-Powered Document Q&A System",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@azure/ai-form-recognizer": "^5.0.0",
+    "@azure/core-auth": "^1.5.0",
+    "@azure/identity": "^4.7.0",
+    "@azure/openai": "^2.0.0",
+    "@azure/search-documents": "^12.1.0",
+    "@azure/storage-blob": "^12.17.0",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "autoprefixer": "^10.4.16",
+    "axios": "^1.7.9",
+    "bcryptjs": "^3.0.0",
+    "cheerio": "^1.0.0",
+    "date-fns": "^4.1.0",
+    "formidable": "^3.5.2",
+    "langchain": "^0.3.19",
+    "mammoth": "^1.9.0",
+    "mongoose": "^8.0.3",
+    "next": "^14.2.24",
+    "next-auth": "^4.24.5",
+    "openai": "^4.85.4",
+    "pdf-parse": "^1.1.1",
+    "pino": "^9.6.0",
+    "postcss": "^8.4.32",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.0.4",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/wiseowl.git"
+  },
+  "keywords": [
+    "ai",
+    "document-qa",
+    "azure",
+    "nextjs",
+    "openai"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/wiseowl/issues"
+  },
+  "homepage": "https://github.com/yourusername/wiseowl#readme"
+}
