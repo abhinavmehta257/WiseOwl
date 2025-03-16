@@ -1,7 +1,7 @@
 import { useState } from 'react';;
 
-export default function WebsiteUrlInput({ initialUrl = '' }) {
-  const [url, setUrl] = useState(initialUrl);
+export default function WebsiteUrlInput() {
+  const [url, setUrl] = useState('');
   const [isValidating, setIsValidating] = useState(false);
   const [error, setError] = useState('');
 

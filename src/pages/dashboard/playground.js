@@ -4,6 +4,8 @@ import Playground from '../../components/layout/Playground';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import Head from 'next/head';
+
 const PlaygroundPage = () => {
   const [botId, setBotId] = useState(null);
 
@@ -24,9 +26,14 @@ const PlaygroundPage = () => {
 
   return botId ? (
     <DashboardLayout>
-      <div className="space-y-6">
-        <Playground botId={botId} />
-      </div>
+      <>
+        <Head>
+          <title>WiseOwl | Bot Playground</title>
+        </Head>
+        <div className="space-y-6">
+          <Playground botId={botId} />
+        </div>
+      </>
     </DashboardLayout>
   ) : (
     <div>Loading...</div>

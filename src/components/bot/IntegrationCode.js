@@ -4,12 +4,12 @@ export default function IntegrationCode({ botId, primaryColor }) {
   const [copied, setCopied] = useState(false);
 
   const integrationCode = `<script>
-  window.wiseowlConfig = {
-    botId: "${botId}",
-    primaryColor: "${primaryColor}"
-  };
-</script>
-<script src="${process.env.NEXT_PUBLIC_CDN_URL}/chatbot.js" async></script>`;
+      window.wiseowlConfig = {
+        botId: "${botId}",
+        primaryColor: "${primaryColor}"
+      };
+    </script>
+    <script src="${process.env.NEXT_PUBLIC_CDN_URL}chatbot.js" async></script>`;
 
   const copyToClipboard = async () => {
     try {
@@ -20,6 +20,8 @@ export default function IntegrationCode({ botId, primaryColor }) {
       console.error('Failed to copy:', err);
     }
   };
+
+
 
   return (
     <div className="bg-white rounded-lg shadow p-6">
@@ -44,7 +46,7 @@ export default function IntegrationCode({ botId, primaryColor }) {
       </div>
 
       {/* Preview section */}
-      <div className="mt-6">
+      {/* <div className="mt-6">
         <h3 className="text-sm font-medium text-gray-700 mb-2">Preview</h3>
         <div className="border rounded-lg p-4 relative h-96">
           <div className="absolute bottom-4 right-4">
@@ -65,10 +67,10 @@ export default function IntegrationCode({ botId, primaryColor }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Instructions */}
-      <div className="mt-6 space-y-4">
+      {/* <div className="mt-6 space-y-4">
         <h3 className="text-sm font-medium text-gray-700">Important Notes:</h3>
         <ul className="list-disc pl-5 text-sm text-gray-600 space-y-2">
           <li>Make sure to add the code just before the closing body tag for optimal loading.</li>
@@ -76,7 +78,7 @@ export default function IntegrationCode({ botId, primaryColor }) {
           <li>The widget is responsive and works on both desktop and mobile devices.</li>
           <li>You can customize the appearance by modifying the primaryColor in the configuration.</li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

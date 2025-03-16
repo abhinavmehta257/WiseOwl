@@ -16,8 +16,9 @@ export default function DashboardHeader() {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/dashboard" className="text-xl font-bold text-primary">
-              WiseOwl
+            <Link href="/dashboard" className="text-xl font-bold text-primary flex items-center gap-2">
+              <img className='h-[50px] rounded-full' src='/assets/logo_sq.png'/> 
+              <span>WiseOwl</span>
             </Link>
           </div>
 
@@ -47,9 +48,9 @@ export default function DashboardHeader() {
               {/* Dropdown menu */}
               {isProfileOpen && (
                 <div className="absolute right-0 mt-2 w-48 py-2 bg-white rounded-md shadow-xl z-50 border border-gray-200">
-                  <div className="px-4 py-2 text-sm text-gray-500 border-b">
-                    {session?.user?.email}
-                  </div>
+                  {/* <div className="px-4 py-2 text-sm text-gray-500 border-b">
+                    {session?.user?.name}
+                  </div> */}
                   <button
                     onClick={() => signOut()}
                     className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
